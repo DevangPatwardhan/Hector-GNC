@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="depth_camera_model" params="name parent *origin">
+    <joint name="${name}_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="${name}_link"/>
+    </joint>
+
+    <link name="${name}_link">
+      <xacro:inertial_sphere mass="0.01" radius="0.035" />  <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://hector_sensors_description/meshes/kinect_camera/kinect_camera_simple.dae"/> </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://hector_sensors_description/meshes/kinect_camera/kinect_camera_simple.stl"/> </geometry>
+      </collision>
+    </link>
+
+    <joint name="${name}_depth_joint" type="fixed">
+      <origin xyz="0.0 -0.02 0.0" rpy="0 0 0" />
+      <parent link="${name}_link" />
+      <child link="${name}_depth_frame"/>
+    </joint>
+    <link name="${name}_depth_frame"/>
+
+    <joint name="${name}_depth_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="${-M_PI/2} 0.0 ${-M_PI/2}" />
+      <parent link="${name}_depth_frame" />
+      <child link="${name}_depth_optical_frame"/>
+    </joint>
+    <link name="${name}_depth_optical_frame"/>
+
+    </xacro:macro>
+
+  <xacro:depth_camera_model name="my_depth_camera" parent="base_link">
+    <origin xyz="0.1 0.0 0.2" rpy="0 0 0"/> </xacro:depth_camera_model>
+
+</robot>
+

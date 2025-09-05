@@ -1,0 +1,41 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/ros/slam_ws/devel/include/**",
+        "/home/ros/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/ros/ros_esp_robot_ws/src/ardrone_gazebo/include/**",
+        "/home/ros/slam_ws/src/drone_basic/include/**",
+        "/home/ros/ros_esp_robot_ws/src/esp32_mr/include/**",
+        "/home/ros/slam_ws/src/explorer_bot/include/**",
+        "/home/ros/catkin_ws/src/geographic_info/geodesy/include/**",
+        "/home/ros/catkin_ws/src/hector_quadrotor_noetic/hector_gazebo/hector_gazebo_plugins/include/**",
+        "/home/ros/catkin_ws/src/hector_quadrotor_noetic/hector_gazebo/hector_gazebo_thermal_camera/include/**",
+        "/home/ros/catkin_ws/src/hector_quadrotor_noetic/hector_localization/hector_pose_estimation/include/**",
+        "/home/ros/catkin_ws/src/hector_quadrotor_noetic/hector_localization/hector_pose_estimation_core/include/**",
+        "/home/ros/catkin_ws/src/hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_controller/include/**",
+        "/home/ros/catkin_ws/src/hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_controller_gazebo/include/**",
+        "/home/ros/catkin_ws/src/hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_gazebo_plugins/include/**",
+        "/home/ros/catkin_ws/src/hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_model/include/**",
+        "/home/ros/catkin_ws/src/hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_pose_estimation/include/**",
+        "/home/ros/catkin_ws/src/hector_quadrotor_noetic/hector_quadrotor/hector_uav_msgs/include/**",
+        "/home/ros/slam_ws/src/parrot_ardrone/sjtu_drone/include/**",
+        "/home/ros/ros_esp_robot_ws/src/turtle/include/**",
+        "/home/ros/catkin_ws/src/tutorials/include/**",
+        "/home/ros/catkin_ws/src/unique_identifier/unique_id/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

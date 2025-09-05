@@ -1,0 +1,19 @@
+<launch>
+  <!-- Load the robot description -->
+  <param name="robot_description"
+         command="$(find xacro)/xacro '$(find hector_quadrotor_description)/urdf/quadrotor_hokuyo_utm30lx.gazebo.xacro'" />
+
+  <!-- Launch the setup assistant -->
+  <node name="moveit_setup_assistant" pkg="moveit_setup_assistant" type="moveit_setup_assistant" />
+
+  <!-- Launch RViz with the MoveIt configuration -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find hector_quadrotor_moveit_config)/launch/moveit.rviz" />
+
+  <!-- Include the MoveIt planning execution launch file -->
+  <include file="$(find hector_quadrotor_moveit_config)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true" />
+  </include>
+
+  <!-- Other configurations as needed -->
+</launch>
+
